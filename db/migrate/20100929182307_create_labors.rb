@@ -11,7 +11,7 @@ class CreateLabors < ActiveRecord::Migration
 
     add_index :labors, :user_id
     add_index :labors, :job_id
-    add_index :labors, :pid
+    add_index :labors, :sid
     add_index :labors, :pid
   end
 
