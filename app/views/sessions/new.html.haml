@@ -1,5 +1,5 @@
 %h1= t('sessions.new.your_access_data')
-- form_tag session_path do
+= form_tag session_path do
   %p
     = label_tag :email, User.human_attribute_name(:email)
     %br/

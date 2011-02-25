@@ -1,6 +1,6 @@
 %h1= "#{@date.strftime('%A, %d %b %Y')} #{t('labors.index.total_hours', :total => @total)}"
 = error_messages_for :labor
--form_for(@labor) do |f|
+=form_for(@labor) do |f|
   =hidden_field_tag :date, params[:date]
   =label_tag :job, t('labors.index.job')
   =text_field_tag :job, (@labor.job.title if @labor.job.present?)
