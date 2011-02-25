@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20101002160757) do
 
   add_index "labors", ["job_id"], :name => "index_labors_on_job_id"
   add_index "labors", ["pid"], :name => "index_labors_on_pid"
+  add_index "labors", ["sid"], :name => "index_labors_on_sid"
   add_index "labors", ["user_id"], :name => "index_labors_on_user_id"
 
   create_table "users", :force => true do |t|
