@@ -5,7 +5,8 @@ class Labor < ActiveRecord::Base
 
   validates_presence_of :user_id, :job_id
 
-  named_scope :actives, :conditions => "start_at is not null", :order => "labors.created_at desc"
+  # named_scope :actives, :conditions => "start_at is not null", :order => "labors.created_at desc"
+  scope :actives, where("start_at is not null").order("labors.created_at DESC")
 
   before_save :update_time
 
