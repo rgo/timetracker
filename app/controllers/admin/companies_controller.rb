@@ -6,6 +6,12 @@ class Admin::CompaniesController < Admin::AdminController
     redirect_to :show
   end
 
+  def show
+  end
+
+  def edit
+  end
+
   def update
     if @company.update_attributes(params[:company])
       redirect_to(admin_company_path(@company), :notice => t('companies.edit.successfully'))
