@@ -20,6 +20,15 @@ Feature: Admin can edit company info
     And   I go to the adminpage
     Then  I should see "No tienes permiso para acceder a esta página"
 
+  Scenario: Admin can edit the company info
+    Given I am an admin
+    And   I follow "Mi empresa"
+    And   I follow "Modificar"
+    When  I fill in "Nombre" with "Rumasa que pasa"
+    And   I fill in "Dirección" with "C/Ruizmateos, 34 5B"
+    And   I fill in "Email" with "empresa@test.com"
+    And   I press "Guardar datos"
+    Then  I should see "Compañia actualizada correctamente"
 
 
 
@@ -56,24 +65,24 @@ Feature: Admin can edit company info
 
 
 
-#  Scenario: Admin can edit the company info
-#    Given I am an admin
-#    And   I follow "Mi empresa"
-#    And   I follow "Modificar"
-#    When  I fill in "Nombre" with "Rumasa que pasa"
-#    And   I fill in "Dirección" with "C/Ruizmateos, 34 5B"
-#    And   I press "Guardar datos"
-#    Then  I should see "Compañia actualizada correctamente"
+    #  Scenario: Admin can edit the company info
+    #    Given I am an admin
+    #    And   I follow "Mi empresa"
+    #    And   I follow "Modificar"
+    #    When  I fill in "Nombre" with "Rumasa que pasa"
+    #    And   I fill in "Dirección" with "C/Ruizmateos, 34 5B"
+    #    And   I press "Guardar datos"
+    #    Then  I should see "Compañia actualizada correctamente"
 
-#  Scenario Outline: User can edit the company info
-#    Given I am an user
-#    When  I fill in "Proyecto" with "<name>"
-#    And   I fill in "Descripción" with "<address>"
-#    And   I press "Comenzar"
-#    Then  I should see "<result>"
-#
-#    Examples:
-#      | name                       | address                | result                            |
-#      | Como se podan los geranios | Que se me mueren todos | Actividad creada correctamente    |
-#      |                            | Que se me mueren todos | Nombre no puede estar vacío       |
-#      | Como se podan los geranios |                        | Dirección no puede estar vacío    |
+    #  Scenario Outline: User can edit the company info
+    #    Given I am an user
+    #    When  I fill in "Proyecto" with "<name>"
+    #    And   I fill in "Descripción" with "<address>"
+    #    And   I press "Comenzar"
+    #    Then  I should see "<result>"
+    #
+    #    Examples:
+    #      | name                       | address                | result                            |
+    #      | Como se podan los geranios | Que se me mueren todos | Actividad creada correctamente    |
+    #      |                            | Que se me mueren todos | Nombre no puede estar vacío       |
+    #      | Como se podan los geranios |                        | Dirección no puede estar vacío    |
