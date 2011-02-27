@@ -21,6 +21,7 @@ es:
         commercial_name: "Nombre comercial"
         address: "Dirección"
         place: "Población"
+        phone: "Teléfono"
       job:
         company_id: "Empresa"
         title: "Nombre del proyecto"
