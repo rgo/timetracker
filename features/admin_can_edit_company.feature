@@ -20,16 +20,24 @@ Feature: Admin can edit company info
     And   I go to the adminpage
     Then  I should see "No tienes permiso para acceder a esta página"
 
-  Scenario: Admin can edit the company info
+  Scenario Outline: User can edit the company info validating presence of fields
     Given I am an admin
     And   I follow "Mi empresa"
     And   I follow "Modificar"
-    When  I fill in "Nombre" with "Rumasa que pasa"
-    And   I fill in "Dirección" with "C/Ruizmateos, 34 5B"
-    And   I fill in "Email" with "empresa@test.com"
-    And   I fill in "Teléfono" with "941123456"
+    When  I fill in "Nombre" with "<name>"
+    And   I fill in "Dirección" with "<address>"
+    And   I fill in "Email" with "<email>"
+    And   I fill in "Teléfono" with "<phone>"
     And   I press "Guardar datos"
-    Then  I should see "Compañia actualizada correctamente"
+    Then  I should see "<result>"
+
+    Examples:
+      | name            | address             | email            | phone     | result                             |
+      | rumasa que pasa | C/Ruizmateos, 34 5B | empresa@test.com | 941123456 | Compañia actualizada correctamente |
+      |                 | C/Ruizmateos, 34 5B | empresa@test.com | 941123456 | no puede estar vacío               |
+      | rumasa que pasa |                     | empresa@test.com | 941123456 | Compañia actualizada correctamente |
+      | rumasa que pasa | C/Ruizmateos, 34 5B |                  | 941123456 | no puede estar vacío               |
+      | rumasa que pasa | C/Ruizmateos, 34 5B | empresa@test.com |           | Compañia actualizada correctamente |
 
 
 
